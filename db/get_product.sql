@@ -1,0 +1,1 @@
+select * from bin = $1
