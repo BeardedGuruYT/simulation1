@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Link} from 'react-router-dom';
+import Router from './components/Router';
 
-class App extends Component {
-  constructor (){
-    super()
+export default class App extends Component {
 
-    this.state = {
-
-    }
-  }
-  
-
-handleClick(){
-  
-}
 
   render() {
     return (
       <div>
-        <header><h1>SHELFIE</h1></header>
-        <button className='shelfA' onClick={ (e) => this.handleClick(e.target.value)}>Shelf A</button>
-        <button className='shelfB'>Shelf B</button>
-        <button className='shelfC'>Shelf C</button>
-        <button className='shelfD'>Shelf D</button>
+      <header><h1>SHELFIE</h1></header>
+          <Link to='/shelfA'>Shelf A</Link>
+          <Link to='/shelfB'>Shelf B</Link>
+          <Link to='/shelfC'>Shelf C</Link>
+          <Link to='/shelfD'>Shelf D</Link>   
+          {Router}         
       </div>
-      
     );
   }
 }
 
-export default App;
+
