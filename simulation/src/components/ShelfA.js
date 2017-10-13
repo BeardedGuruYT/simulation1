@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ShelfA extends Component {
-  render() {
+export default function ShelfA() {
     return (
       <div>
-          <button>Bin 1</button>
-          <button>Bin 2</button>
-          <button>Bin 3</button>
-          <button>Bin 4</button>
-          <button>Bin 5</button>
+          <button>Bin A 1</button>
+          <button>Bin A 2</button>
+          <button>Bin A 3</button>
+          <button>Bin A 4</button>
+          <button>Bin A 5</button>
       </div>
     )
   }
-}
+
