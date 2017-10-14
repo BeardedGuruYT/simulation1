@@ -10,10 +10,9 @@ import Home from './Home'
 export default (
     <Switch>
         <Route exact path='/' component={Home}></Route>
-        <Route path='/shelfA' component={ShelfA}/>
-        <Route path='/shelfB' component={ShelfB}/>
-        <Route path='/shelfC' component={ShelfC}/>
-        <Route path='/shelfD' component={ShelfD}/>
-        
+        <Route path='/home/shelf_a' component={ShelfA}/>
+        <Route path='/home/shelf_b' component={ShelfB}/>
+        <Route path='/home/shelf_c' component={ShelfC}/>
+        <Route path='/home/shelf_d' component={ShelfD}/> 
     </Switch>
 )

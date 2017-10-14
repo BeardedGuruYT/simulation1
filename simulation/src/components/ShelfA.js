@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function ShelfA() {
+   
     return (
       <div>
           <button>Bin A 1</button>

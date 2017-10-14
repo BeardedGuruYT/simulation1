@@ -1,17 +1,14 @@
 import React from 'react';
-import ShelfA from './ShelfA';
-import ShelfB from './ShelfB';
-import ShelfC from './ShelfC';
-import ShelfD from './ShelfD';
+import { Link } from 'react-router-dom';
+
 
 export default function Home(){
     return (
         <div>
-            <p>this is Home page</p>
-            {ShelfA}
-            {ShelfB}
-            {ShelfC}
-            {ShelfD}
+            <Link to='/home/shelf_a'><button>Shelf A</button></Link>
+            <Link to='/home/shelf_b'><button>Shelf B</button></Link>
+            <Link to='/home/shelf_c'><button>Shelf C</button></Link>
+            <Link to='/home/shelf_d'><button>Shelf D</button></Link>
         </div>
     )
 }
