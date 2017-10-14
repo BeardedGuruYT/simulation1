@@ -1,1 +1,1 @@
-INSERT INTO shelf ( name, price, ) VALUES ( $1, $2 )
+INSERT INTO bins ( shelf, name, price, img ) VALUES ( $1, $2, $3, $4 )

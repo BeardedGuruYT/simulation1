@@ -1,1 +1,1 @@
-SELECT * FROM shelf WHERE id = $1;
+SELECT * FROM bins WHERE id = $1;

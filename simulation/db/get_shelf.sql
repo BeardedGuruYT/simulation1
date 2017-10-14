@@ -1,2 +1,3 @@
 select * 
-from shelf
+from bins 
+where shelf = $1

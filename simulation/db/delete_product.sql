@@ -1,1 +1,1 @@
-DELETE FROM shelf WHERE id = $1;
+DELETE FROM bins WHERE id = $1;
