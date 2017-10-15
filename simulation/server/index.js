@@ -8,11 +8,15 @@ const product_controller = require('./product_controller')
 const app = express();
 app.use( bodyParser.json() );
 app.use( cors() );
-massive( process.env.CONNECTION_STRING ).then(db => app.set('db', db) );
+massive( process.env.CONNECTION_STRING ).then(db => 
+    {   
+        console.log('DB connected')
+        app.set('db', db)
+    } );
 
 app.post( '/api/bins/:shelf', product_controller.create);
 app.get( '/api/bins/:shelf', product_controller.getAll);
-app.get( '/api/bins/:id', product_controller.getOne);
+app.get( '/api/bins/bin1/:id', product_controller.getBin);
 app.put( '/api/bins/:id', product_controller.update);
 app.delete('/api/bins/:id', product_controller.delete);
 

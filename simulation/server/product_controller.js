@@ -8,13 +8,15 @@ module.exports = {
             .catch((err) => res.status(500).send(err));
     },
 
-    getOne: (req, res, next) => {
+    getBin: (req, res, next) => {
+        console.log("it works")
         const db = req.app.get('db');
         const { params } = req;
+        
 
         db.get_product([req.params.id])
-            .then(product => res.status(200).send(product))
-            .catch(() => res.status(500).send());
+            .then((product) => res.status(200).send(product))
+            .catch((err) => res.status(500).send(err));
     },
 
     getAll: (req, res, next) => {
@@ -30,10 +32,11 @@ module.exports = {
     },
 
     update: (req, res, next) => {
+        console.log('it gers here')
         const db = req.app.get('db');
-        const { params, query } = req;
+        const { params, body } = req;
 
-        db.update_product([params.id, shelf, name, price])
+        db.update_product([params.id, body.name, body.price])
             .then(() => res.status(200).send())
             .catch(() => res.status(500).send());
     },

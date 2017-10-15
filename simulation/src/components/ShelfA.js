@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
+import BinA1 from './BinA1';
 
-export default function ShelfA() {
+export default class ShelfA extends Component {
    
+   render (){
+     
     return (
       <div>
-          <button>Bin A 1</button>
+          <BinA1 />
           <button>Bin A 2</button>
           <button>Bin A 3</button>
           <button>Bin A 4</button>
@@ -12,4 +15,5 @@ export default function ShelfA() {
       </div>
     )
   }
+}
 
