@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 
-// COMP 36C 36D 36E 36F 36G 36H 36I 36J 37 C42H
+// COMP 36C 36D 36E 36F 36G 36H 36I 36J 37 42H 42E 
 export default class CompA extends Component {
     constructor(){
         super();
@@ -33,11 +33,10 @@ export default class CompA extends Component {
     let heroes = this.state.allHeroes.map((item, i) => {
         return (
             <div key={i}>
-                 <p>{item.id}</p>
+                 
                <p> NAME:{item.name}</p>
                <p> HAIR COLOR: {item.hair_color}</p>
                <p> EYE COLOR: {item.eye_color}</p> 
-                <Link to={`/compB/${item.name}`}><img src={'{item.url}'}/></Link>
             </div>
         )
     })
@@ -45,6 +44,7 @@ export default class CompA extends Component {
     <div>
         <Header/>
         {heroes}
+        <Link to='/compB'><button>Planets</button></Link>
     </div>
       
     )

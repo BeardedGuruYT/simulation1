@@ -1,41 +1,39 @@
 import React, { Component } from 'react'
-import axios from 'axios';
+import { connect } from 'react-redux'
+import { getAll } from './../redux/reducer'
 
 
-export default class CompB extends Component {
-constructor(){
-    super()
+ class CompB extends Component {
 
-    this.state={
-        person: []
-    }
-}
+// COMP 38C 38D
 
-
-componentDidMount(id){
- axios.get(`https://swapi.co/api/people/${id}`)
- .then(res => {
-     console.log(res)
-     this.setState({
-         person: res.data.results
-     })
- })
+componentDidMount(){
+ this.props.getAll();
 }
 
   render() {
-      console.log(this.state.person)
-      let onePerson = this.state.person.map((item, i) => {
-          return (
-              <div>
+      console.log(this.props.allPlanets)
+      let planet = this.props.allPlanets.map((item, i) => {
+          return(
+              <div key={i}>
                   {item.name}
-                  {item.height}
               </div>
           )
       })
+      
     return (
       <div>
-        
+          <h1>PLANETS</h1>
+        {planet}
       </div>
     )
   }
 }
+
+function mapStateToProps(state){
+    console.log(state, "STATE")
+    return {
+        allPlanets: state.allPlanets
+    }
+}
+export default connect (mapStateToProps, {getAll})(CompB)
