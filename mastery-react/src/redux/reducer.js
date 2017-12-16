@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { log } from 'util';
 
 const initialState = {
     allPlanets: []
@@ -6,20 +7,23 @@ const initialState = {
 
 const GET_ALL = 'GET_ALL';
 
+export function getAll(){
+    return {
+        
+        type: GET_ALL, 
+        payload: axios.get('https://swapi.co/api/planets').then(res => res) 
+        
+    }
+}
 export default function reducer (state = initialState, action){
     switch(action.type) {
         
-        case GET_ALL:
-        console.log("ACTION", action.payload)
-        return Object.assign({}, state, {allPlanets: [...action.payload.data.results]})
+        case 'GET_ALL_FULFILLED':
+        return Object.assign({}, state, {allPlanets: action.payload.data.results})
+        
 
         default: return state
     }
 }
 
-export function getAll(){
-    return {
-        type: GET_ALL, 
-        payload: axios.get('https://swapi.co/api/planets').then(res => res) 
-    }
-}
+

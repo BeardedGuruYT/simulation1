@@ -12,7 +12,6 @@ componentDidMount(){
 }
 
   render() {
-      console.log(this.props.allPlanets)
       let planet = this.props.allPlanets.map((item, i) => {
           return(
               <div key={i}>
